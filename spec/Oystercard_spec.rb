@@ -5,6 +5,7 @@ subject(:card){described_class.new}
 let(:entry_station) {double :station}
 let(:exit_station) {double :station}
 
+
 	describe 'New instance' do
 		it 'should have a balance of 0' do
 			expect(card).to have_attributes(:balance => 0)
