@@ -9,6 +9,9 @@ let(:exit_station) {double :station}
 		it 'should have a balance of 0' do
 			expect(card).to have_attributes(:balance => 0)
 		end
+		it 'should initialise an empty journeys array' do
+			expect(card).to have_attributes(:journeys => [])
+		end
 	end
 
 	describe '#top_up' do
@@ -64,6 +67,18 @@ let(:exit_station) {double :station}
 			card.touch_in(entry_station)
 			card.touch_out(exit_station)
 			expect(card).to have_attributes(:entry_station => nil)
+		end
+		it 'touches out will set exit station' do
+			card.top_up(2)
+			card.touch_in(entry_station)
+			card.touch_out("Bank")
+			expect(card).to have_attributes(:exit_station => "Bank")
+		end
+		it 'records the completed journey on touch out' do
+			card.top_up(2)
+			card.touch_in(entry_station)
+			card.touch_out(exit_station)
+			expect(card).to have_attributes(:journeys => [{entry: entry_station, exit: exit_station}])
 		end
 	end
 
