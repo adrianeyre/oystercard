@@ -4,7 +4,8 @@ describe Oystercard do
 subject(:card){described_class.new}
 let(:entry_station) {double :station}
 let(:exit_station) {double :station}
-
+let(:test_station) {double :station, :station_key => {"Bank" => 1}}
+let(:journey) {double:journey}
 
 	describe 'New instance' do
 		it 'should have a balance of 0' do
@@ -41,18 +42,16 @@ let(:exit_station) {double :station}
 			card.touch_in(entry_station)
 			expect(card).to have_attributes(:in_journey => true)
 		end
+
 		it 'raise an error when insufficient funds on card' do
 			expect{card.touch_in(entry_station)}.to raise_error('insufficient funds')
 		end
-		it 'remembers entry station' do
-			card.top_up(2)
-			expect(card.touch_in(entry_station)).to eq entry_station
-		end
+
 	end
 
 	describe '#touch_out' do
 		before(:each) do
-		    @card = card.top_up(2)
+		    @card = card.top_up(10)
 		    @card = card.touch_in(entry_station)
 		 end
 
@@ -65,14 +64,14 @@ let(:exit_station) {double :station}
 			card.touch_out(exit_station)
 			expect(card).to have_attributes(:entry_station => nil)
 		end
-		it 'touches out will set exit station' do
-			card.touch_out("Bank")
-			expect(card).to have_attributes(:exit_station => "Bank")
+		
+
+		it 'touches out will set entry station to nil' do
+			card.touch_out(nil)
+			expect(card).to have_attributes(:balance => 4)
 		end
-		it 'records the completed journey on touch out' do
-			card.touch_out(exit_station)
-			expect(card).to have_attributes(:journeys => [{entry: entry_station, exit: exit_station}])
-		end
+
+
 	end
 
 end

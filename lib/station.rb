@@ -4,7 +4,7 @@ attr_reader :name, :zone
 
 	def initialize(name="test name", zone="test zone")
 	@name = name
-	@zone = zone 
+	@zone = zone
 	end
 
 	def ask_zone
@@ -12,4 +12,3 @@ attr_reader :name, :zone
 	end
 	
 end
-
