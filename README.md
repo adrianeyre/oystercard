@@ -9,7 +9,8 @@ This week's challenge will start with going back over the basics we covered last
 ### <a name="Setup">Project Setup</a>
 #### Gem files used in project
 * rspec
-* coveralls <br>
+* coveralls
+
 #### Clone and run project
 ```
 $ git clone https://github.com/adrianeyre/oystercard
