@@ -6,19 +6,19 @@
 ## <a name="Outline">Outline</a>
 This week's challenge will start with going back over the basics we covered last week in Boris Bikes, giving you the chance to reinforce what you learned last week. You'll then be challenged to build a more complex system which should really stretch your skills in Ruby, TDD and object-oriented design.
 
-### <a name="Setup">Project Setup</a>
-#### Gem files used in project
+## <a name="Setup">Project Setup</a>
+### Gem files used in project
 * rspec
 * coveralls
 
-#### Clone and run project
+### Clone and run project
 ```
 $ git clone https://github.com/adrianeyre/oystercard
 $ cd oystercard
 $ rspec
 ```
 
-### <a name="Story">User Story</a>
+## <a name="Story">User Story</a>
 ```
 In order to use public transport
 As a customer
