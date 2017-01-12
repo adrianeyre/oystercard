@@ -1,4 +1,5 @@
-require './lib/Oystercard'
+require 'Oystercard'
+
   describe Oystercard do
 
   let(:station)   {double :kings_cross}
