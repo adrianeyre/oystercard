@@ -60,9 +60,9 @@ let(:journey) {double:journey}
 			expect(card).to have_attributes(:in_journey => false)
 		end
 	
-		it 'touches out will set entry station to nil' do
+		it 'touches out will return blance with penalty fare deducted' do
 			card.touch_out(exit_station)
-			expect(card).to have_attributes(:entry_station => nil)
+			expect(card).to have_attributes(:balance => 4)
 		end
 		
 

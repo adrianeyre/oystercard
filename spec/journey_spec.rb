@@ -1,18 +1,17 @@
 require 'journey'
 
 describe Journey do
-  subject(:journey){described_class.new}
-  let(:completejourney){double :journey, :entry => {"Bank" => 1}, :exit => {"Kennington" => 2}}
-  let(:start_station){double :station, :name => "Bank", :zone => 1}
-  let(:exit_station){double :station, :name => "Kennington", :zone => 2}
-
+subject(:journey){described_class.new}
 
  it "sets the journey start station" do
-   expect(completejourney).to have_attributes(:entry => {"Bank" => 1})
+   journey.start_journey("Bank")
+   expect(journey).to have_attributes(:entry => "Bank")
  end
 
 it 'records the completed journey on touch out' do
-	expect(journey.end_journey({"Leicester Sq" => 2})).to eq 1
+	journey.start_journey("Bank")
+	journey.end_journey("Kennington")
+	expect(journey).to have_attributes(:exit => "Kennington")
 end
 
 end
