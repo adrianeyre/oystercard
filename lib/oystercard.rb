@@ -25,11 +25,9 @@ attr_reader :balance, :in_journey, :journeys
 	end
 
 	def touch_out(exit_station)
-	
 		@journeys << {entry: @entry_station, exit: exit_station}
 		@in_journey = false
 		deduct(@current_journey.end_journey(exit_station))
-		balance
 	end
 
 private
