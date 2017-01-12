@@ -3,6 +3,8 @@ describe Oystercard do
 
 let(:station)   {double :kings_cross}
 let(:station_2) {double :victoria}
+let(:new_journey) {double :journey}
+  before(:each){subject.instance_variable_set(:@current_journey, new_journey)}
   it 'should have starting balance of zero' do
     expect(subject.balance).to eq(0)
   end
@@ -26,11 +28,14 @@ let(:station_2) {double :victoria}
     it "should raise errors if below balance_min" do
       expect{subject.touch_in station}.to raise_error "balance too low for journey"
     end
+
     context "has enough money on card" do
       before(:each){subject.top_up Oystercard::BALANCE_MAX}
+
       it "should set start_station to current station" do
         subject.touch_in station
-        expect(subject.start_station).to eq station
+        allow(new_journey).to receive(:start_station).and_return true
+        expect(subject.current_journey.start_station).to eq station
       end
       it "should change state to in use" do
         subject.touch_in station

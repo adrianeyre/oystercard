@@ -3,8 +3,7 @@ class Journey
   MINIMUM_FARE = 1
 attr_reader :start_station,:end_station
 
-
-  def initialize start_station
+  def initialize (start_station = nil)
     @start_station = start_station
     @in_journey = true
   end

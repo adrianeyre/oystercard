@@ -4,12 +4,12 @@ describe Journey do
   let(:station)     {double :start_station, name: "Kings",zone: 1}
   let(:end_station) {double :end_station  , name: "Pimlico",zone: 1}
 
-  subject {described_class.new(station)}
+  subject {described_class.new}
   describe "#new" do
     it{is_expected.to be_in_journey} ##
-    it'has a start station set' do
-      expect(subject.start_station).to eq station
-    end
+    # it'has a start station set' do
+    #   expect(subject.start_station).to eq station
+    # end
   end
 
   describe "#end" do
@@ -39,7 +39,11 @@ describe Journey do
       subject.start station
       expect(subject.calculate_fare).to eq Journey::PENALTY_FARE
     end
-    it "returns the penalty fare if touch out without touch in"
+
+    it "returns the penalty fare if touch out without touch in" do
+      subject.end end_station
+      expect(subject.calculate_fare).to eq Journey::PENALTY_FARE
+    end
   end
 
   describe "#start" do
