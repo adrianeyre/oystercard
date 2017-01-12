@@ -18,6 +18,12 @@ $ cd oystercard
 $ rspec
 ```
 
+### Change day branch
+```
+$ git checkout <branch>
+```
+where branch is either day-one, day-two, day-three, day-four or day-five
+
 ## <a name="Story">User Story</a>
 ```
 In order to use public transport
