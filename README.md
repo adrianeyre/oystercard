@@ -22,7 +22,7 @@ $ rspec
 ```
 $ git checkout <branch>
 ```
-where branch is either day-one, day-two, day-three, day-four or day-five
+where `<branch>` is either day-one, day-two, day-three, day-four or day-five
 
 ## <a name="Story">User Story</a>
 ```
