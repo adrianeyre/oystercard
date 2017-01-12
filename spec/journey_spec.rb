@@ -32,17 +32,17 @@ describe Journey do
     it "returns a fare when given a completed journey" do
       subject.start station
       subject.end end_station
-      expect(subject.calculate_fare ).to eq Journey::MINIMUM_FARE
+      expect(subject.fare ).to eq Journey::MINIMUM_FARE
     end
     it "returns the penalty fare if touch in twice" do
       subject.start station
       subject.start station
-      expect(subject.calculate_fare).to eq Journey::PENALTY_FARE
+      expect(subject.fare).to eq Journey::PENALTY_FARE
     end
 
     it "returns the penalty fare if touch out without touch in" do
       subject.end end_station
-      expect(subject.calculate_fare).to eq Journey::PENALTY_FARE
+      expect(subject.fare).to eq Journey::PENALTY_FARE
     end
   end
 

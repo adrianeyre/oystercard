@@ -22,7 +22,7 @@ attr_reader :start_station,:end_station
     @in_journey = false
   end
 
-  def calculate_fare
+  def fare
     raise "still in journey" if @in_journey
     return PENALTY_FARE if start_station.nil? || end_station.nil?
     MINIMUM_FARE

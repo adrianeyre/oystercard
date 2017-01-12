@@ -22,18 +22,25 @@ class Oystercard
   def touch_in station
     raise "balance too low for journey" if @balance < BALANCE_MIN
     @current_journey.start station
-    # @start_station = station
+    @current_journey.start station if check_complete
   end
 
   def touch_out station
     @current_journey.end station
-    @balance -= @current_journey.calculate_fare
-    @journey_history << {start_station: start_station, end_station: station}
-    # @start_station = nil
-    # deduct BALANCE_MIN
+    check_complete
+  end
+
+  def handle_complete
+    @journey_history << current_journey
+    deduct current_journey.fare
+    current_journey = Journey.new
+  end
+
+  def check_complete
+      (handle_complete ; return true) if !in_journey?
   end
 
   def in_journey?
-    !!@start_station
+    current_journey.in_journey?
   end
 end
