@@ -15,6 +15,7 @@ This week's challenge will start with going back over the basics we covered last
 ```
 $ git clone https://github.com/adrianeyre/oystercard
 $ cd oystercard
+$ bundle
 $ rspec
 ```
 
