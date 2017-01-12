@@ -3,7 +3,6 @@ require "JourneyLog"
 describe JourneyLog do
   subject(:journeylog) {described_class.new}
   let(:station)     {double :start_station, name: "Kings",zone: 1}
-  let(:journey) {double :journey, start_station: station}
   let(:end_station) {double :end_station  , name: "Pimlico",zone: 1}
 
   describe "#start" do
@@ -13,13 +12,20 @@ describe JourneyLog do
     end
   end
   describe "#current_journey" do
-    it "should return a incomplete journey or create a new journey"
+    it "should return a incomplete journey" do
+      expect(subject.current_journey).to be_in_journey
+    end
+    it "should create a new journey if journey is complete" do
+      subject.start  station
+      subject.finish end_station
+      expect(subject.current_journey).to be_in_journey
+    end
   end
   describe "#finish" do
     it "should add an exit station to the current_journey" do
-      allow(station).to receive(:end).and_return station
+      journey = subject.current_journey
       subject.finish(station)
-      expect(subject.current_journey.end_station).to eq station
+      expect(journey.end_station).to eq station
     end
   end
   describe "#journeys" do
