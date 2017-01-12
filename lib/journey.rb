@@ -1,5 +1,9 @@
 class Journey
-  DEFAULT_PENALTY = 6
+  PENALTY_FARE = 6
+  MINIMUM_FARE = 1
+attr_reader :start_station,:end_station
+
+
   def initialize start_station
     @start_station = start_station
     @in_journey = true
@@ -9,12 +13,9 @@ class Journey
     @in_journey
   end
 
-  def start_station
-    @start_station
-  end
-
-  def end_station
-    @end_station
+  def start station
+    @in_journey = false if @start_station
+    @start_station ||= station
   end
 
   def end station
@@ -22,7 +23,9 @@ class Journey
     @in_journey = false
   end
 
-  def calculate_fare zone_1, zone_2
-    5
+  def calculate_fare
+    raise "still in journey" if @in_journey
+    return PENALTY_FARE if start_station.nil? || end_station.nil?
+    MINIMUM_FARE
   end
 end
