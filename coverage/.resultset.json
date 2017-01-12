@@ -1,67 +1,74 @@
 {
   "RSpec": {
     "coverage": {
-      "/media/sf_share/makers/wk2/oystercard/spec/Journey_log_spec.rb": [
+      "/Users/AdrianEyre/Projects/oystercard/spec/Journey_log_spec.rb": [
+        1,
+        null,
+        1,
+        6,
+        5,
+        3,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/AdrianEyre/Projects/oystercard/lib/JourneyLog.rb": [
+        1,
         1,
         null,
         1,
         5,
-        4,
-        2,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/media/sf_share/makers/wk2/oystercard/lib/JourneyLog.rb": [
-        1,
-        1,
-        null,
-        1,
-        4,
-        4,
+        5,
         null,
         null,
         null,
         1,
-        2,
+        3,
         null,
         null,
         1,
-        2,
+        3,
+        3,
         null,
         null,
         1,
         4,
         3,
         null,
+        null,
         null
       ],
-      "/media/sf_share/makers/wk2/oystercard/spec/journey_spec.rb": [
+      "/Users/AdrianEyre/Projects/oystercard/spec/journey_spec.rb": [
         1,
         null,
         1,
@@ -119,15 +126,15 @@
         null,
         null
       ],
-      "/media/sf_share/makers/wk2/oystercard/lib/journey.rb": [
+      "/Users/AdrianEyre/Projects/oystercard/lib/journey.rb": [
         1,
         1,
         1,
         1,
         null,
         1,
-        34,
-        34,
+        36,
+        36,
         null,
         null,
         1,
@@ -140,8 +147,8 @@
         null,
         null,
         1,
-        7,
-        7,
+        8,
+        8,
         null,
         null,
         1,
@@ -151,7 +158,7 @@
         null,
         null
       ],
-      "/media/sf_share/makers/wk2/oystercard/spec/oystercard_spec.rb": [
+      "/Users/AdrianEyre/Projects/oystercard/spec/oystercard_spec.rb": [
         1,
         null,
         1,
@@ -214,7 +221,7 @@
         null,
         null
       ],
-      "/media/sf_share/makers/wk2/oystercard/lib/Oystercard.rb": [
+      "/Users/AdrianEyre/Projects/oystercard/lib/Oystercard.rb": [
         1,
         1,
         1,
@@ -262,7 +269,7 @@
         null,
         null
       ],
-      "/media/sf_share/makers/wk2/oystercard/spec/station_spec.rb": [
+      "/Users/AdrianEyre/Projects/oystercard/spec/station_spec.rb": [
         1,
         null,
         1,
@@ -278,7 +285,7 @@
         null,
         null
       ],
-      "/media/sf_share/makers/wk2/oystercard/lib/station.rb": [
+      "/Users/AdrianEyre/Projects/oystercard/lib/station.rb": [
         1,
         1,
         null,
@@ -289,6 +296,6 @@
         null
       ]
     },
-    "timestamp": 1484240141
+    "timestamp": 1484240965
   }
 }

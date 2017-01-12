@@ -29,6 +29,11 @@ describe JourneyLog do
     end
   end
   describe "#journeys" do
-    it "returns history of all journeys"
+    it "returns history of all journeys" do
+      #journey = subject.current_journey
+      subject.start  station
+      subject.finish end_station
+      expect(subject.journeys[0].end_station).to eq end_station
+    end
   end
 end
