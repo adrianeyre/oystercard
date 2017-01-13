@@ -2,16 +2,17 @@ require 'journey'
 
 describe Journey do
 subject(:journey){described_class.new}
+let(:station){double :station, name: "Bank", zone: 1}
 
-	it "#start_journey sets the journey start station" do
-		journey.start_journey("Bank")
-		expect(journey.current_journey).to include(:entry_station =>"Bank")
+	it "#start_journey return entry station" do
+		journey.start_journey(station)
+		expect(journey.entry).to eq (station)
 	 end
 
 	it '#end to return records the completed journey on touch out' do
-		journey.start_journey("Bank")
-		journey.end_journey("Kennington")
-		expect(journey.current_journey).to include(:exit_station =>"Kennington")
+		journey.start_journey(station)
+		journey.end_journey(station)
+		expect(journey.exit).to eq station
 	end
 
 

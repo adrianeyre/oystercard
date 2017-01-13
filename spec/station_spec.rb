@@ -4,9 +4,9 @@ describe Station do
 
 subject(:station){described_class.new}
 
-	describe '#ask_zone' do
+	describe '#initialize' do
 		it 'should return zone' do
-		expect(station.ask_zone(station)).to eq "test zone"
+		expect(station.zone).to eq 1
 		end
 	end
 

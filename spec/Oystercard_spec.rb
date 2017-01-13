@@ -52,21 +52,21 @@ let(:journey) {double:journey}
 		    @card = card.touch_in(entry_station)
 		 end
 
-		it 'touches out' do
-			card.touch_out("Liverpool Street")
-			expect(card).to have_attributes(:in_journey => false)
-		end
+		# it 'touches out' do
+		# 	card.touch_out("Liverpool Street")
+		# 	expect(card).to have_attributes(:in_journey => false)
+		# end
 	
-		it 'touches out will return blance with penalty fare deducted' do
-			card.touch_out(exit_station)
-			expect(card).to have_attributes(:balance => 4)
-		end
+		# it 'touches out will return blance with penalty fare deducted' do
+		# 	card.touch_out(exit_station)
+		# 	expect(card).to have_attributes(:balance => 4)
+		# end
 		
 
-		it 'touches out will set entry station to nil' do
-			card.touch_out(nil)
-			expect(card).to have_attributes(:balance => 4)
-		end
+		# it 'touches out will set entry station to nil' do
+		# 	card.touch_out(nil)
+		# 	expect(card).to have_attributes(:balance => 4)
+		# end
 
 
 	end
