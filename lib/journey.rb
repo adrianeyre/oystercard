@@ -1,24 +1,26 @@
 class Journey
 MIN_FARE = 1
 MAX_FARE = 6
-  attr_accessor :entry, :exit
+INCOMPLETE_JOURNEY = 1
+  attr_accessor :entry, :exit, :current_journey
 
   def initialize
-    @entry = ""
-    @exit = ""
+    @current_journey = {}
   end
 
   def start_journey(station)
-  	@entry = station
+    fare
+    @current_journey[:entry_station] = station
   end
 
   def end_journey(station) 
-    @exit = station
-    fare 
+    fare
+    @current_journey[:exit_station] = station
   end
 
+
 def fare
-	@entry || @exit == "" ? MAX_FARE : MIN_FARE
+	@current_journey.size != INCOMPLETE_JOURNEY ? MIN_FARE : MAX_FARE
 end
 
 end

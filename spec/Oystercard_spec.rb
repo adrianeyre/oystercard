@@ -11,9 +11,6 @@ let(:journey) {double:journey}
 		it 'should have a balance of 0' do
 			expect(card).to have_attributes(:balance => 0)
 		end
-		it 'should initialise an empty journeys array' do
-			expect(card).to have_attributes(:journeys => [])
-		end
 	end
 
 	describe '#top_up' do
