@@ -9,7 +9,6 @@ attr_reader :journeys
   end
 
   def start_journey(entry_station)
-   #@journey_class::MAX_FARE  if @journey_class.entry != nil
    @journeys << @journey_class.start_journey(entry_station)
    entry_station
   end

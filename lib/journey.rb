@@ -1,11 +1,10 @@
 class Journey
 MIN_FARE = 1
 MAX_FARE = 6
-INCOMPLETE_JOURNEY = 1
-  attr_accessor :entry, :exit, :current_journey
+
+  attr_accessor :entry, :exit
 
   def initialize
-    #@current_journey = {}
     @entry = nil
     @exit = nil
   end
@@ -20,8 +19,13 @@ INCOMPLETE_JOURNEY = 1
 
 
 def fare
-       return MAX_FARE if @entry != nil && @exit == nil 
+       return MAX_FARE if journey_incomplete?
       (@exit.zone - @entry.zone).abs + MIN_FARE
 end
+
+private
+  def journey_incomplete?
+    (@entry != nil && @exit == nil ) || (@entry == nil && @exit != nil )
+  end
 
 end

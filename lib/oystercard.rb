@@ -15,15 +15,14 @@ attr_reader :balance, :in_journey, :journeys
 	end
 
 	def top_up(amount)
-		raise ("Limit is #{DEFAULT_LIMIT}, declined") if @balance + amount > DEFAULT_LIMIT
+		@amount = amount
+		raise ("Limit is #{DEFAULT_LIMIT}, declined") if reached_limits?
 		@balance += amount
 	end
 
 	def touch_in(entry_station)
-		raise 'insufficient funds' if @balance < MIN_FARE
-		deduct(@journeys.fare) if @in_journey == true
-		@in_journey = true
-		@journeys.start_journey(entry_station)
+		raise 'insufficient funds' if insufficient_funds?
+		@in_journey == true ? deduct_max_fare : allow_touch_in(entry_station)
 	end
 
 	def touch_out(exit_station)
@@ -35,8 +34,31 @@ attr_reader :balance, :in_journey, :journeys
 
 private
 
+attr_reader :amount
+ 	
+ 	def reached_limits?
+ 		@balance + amount > DEFAULT_LIMIT
+	end
+	
+
 	def deduct(fare)
 		@balance -= fare
 	end
+
+	def deduct_max_fare
+		deduct(@journeys.fare) 
+		@in_journey = false
+	end
+
+	def allow_touch_in(entry_station)
+		@in_journey = true
+		@journeys.start_journey(entry_station)
+	end
+
+	def insufficient_funds?
+		@balance < MIN_FARE
+	end
+
+
 
 end
