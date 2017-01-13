@@ -17,6 +17,10 @@ attr_reader :journeys
   complete_journey
   end
 
+  def journeys
+    @journeys.dup
+  end
+
   private
 
   def complete_journey

@@ -23,4 +23,16 @@ let(:journey){ double :journey }
 	      expect(subject.journeys).to include station
 	    end
 	 end
+
+	 describe '#journeys' do
+
+	    it 'returns all journeys' do
+	      allow(journey_class).to receive(:new).and_return journey
+	     	subject.start_journey("Bank")
+	      subject.end_journey("London Bridge")
+	      subject.start_journey("Bank2")
+	      subject.end_journey("London Bridge2")
+	      expect(subject.journeys).to include ("Bank") && ("London Bridge") && ("Bank2") && ("London Bridge2")
+	    end
+	 end
 end
