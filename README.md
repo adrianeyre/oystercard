@@ -1,4 +1,5 @@
 # Oystercard Challenge
+#### Technologies: Ruby, Rspec
 ### [Makers Academy] (http://www.makersacademy.com) - Week 2 Pair Programming Project
 
 [Project Setup] (#Setup) | [User Story](#Story) | [Files Used] (#Files)
