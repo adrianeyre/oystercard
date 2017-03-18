@@ -1,8 +1,8 @@
 # Oystercard Challenge
 #### Technologies: Ruby, Rspec
-### [Makers Academy] (http://www.makersacademy.com) - Week 2 Pair Programming Project
+### [Makers Academy](http://www.makersacademy.com) - Week 2 Pair Programming Project
 
-[Project Setup] (#Setup) | [User Story](#Story) | [Files Used] (#Files)
+[Project Setup](#Setup) | [User Story](#Story) | [Files Used](#Files)
 
 ## <a name="Outline">Outline</a>
 This week's challenge will start with going back over the basics we covered last week in Boris Bikes, giving you the chance to reinforce what you learned last week. You'll then be challenged to build a more complex system which should really stretch your skills in Ruby, TDD and object-oriented design.
